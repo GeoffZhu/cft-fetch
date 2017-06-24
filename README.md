@@ -15,7 +15,7 @@
 #### Install
 
 ``` sh
- npm install vue-cft-fetch --save
+ npm install cft-fetch --save
 ```
 
 #### Main.js

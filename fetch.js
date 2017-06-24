@@ -68,8 +68,8 @@ export default function install(Vue, INIT_OPTIONS = {}) {
           options[key] = OPTIONS[key]
         }
       })
-      options.hook && options.beforeSendAll(options)
-      options.hook && options.beforeSend(options)
+      options.hook && options.beforeSendAll.call(vueFetch, options)
+      options.hook && options.beforeSend.call(vueFetch, options)
       if (options.session) {
         return this.getDataFromSession(options)
       } else if (options.storage) {
@@ -108,8 +108,8 @@ export default function install(Vue, INIT_OPTIONS = {}) {
         } else {
           reject(resp)
         }
-        options.hook && options.afterResponseAll(resp)
-        options.hook && options.afterResponse(resp)
+        options.hook && options.afterResponseAll.call(vueFetch, options)
+        options.hook && options.afterResponse.call(vueFetch, options)
       }).then(options.interceptor)
     },
     async getDataFromSession(options) {
