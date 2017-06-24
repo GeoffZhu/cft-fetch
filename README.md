@@ -22,7 +22,7 @@
 
 ``` javascript
 
-import vueFetch from 'vue-cft-fetch'
+import vueFetch from 'cft-fetch'
 
 Vue.use(vueFetch, {
   beforeSendAll () {
