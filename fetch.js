@@ -110,7 +110,7 @@ export default function install(Vue, INIT_OPTIONS = {}) {
         }
         options.hook && options.afterResponseAll.call(vueFetch, options)
         options.hook && options.afterResponse.call(vueFetch, options)
-      }).then(options.interceptor)
+      }).then(options.interceptor.bind(vueFetch))
     },
     async getDataFromSession(options) {
       let url = options.url
